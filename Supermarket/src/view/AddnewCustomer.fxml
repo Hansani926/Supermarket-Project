@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="AddNewCustomerAnchorPane" prefHeight="670.0" prefWidth="1027.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddnewCustomerController">
+   <children>
+      <AnchorPane fx:id="root" layoutX="195.0" layoutY="54.0" prefHeight="595.0" prefWidth="814.0" style="-fx-background-color: gray; -fx-background-radius: 20;">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="27.0" prefWidth="79.0" text="Order ID">
+               <font>
+                  <Font name="Bell MT Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblOrderID" layoutX="93.0" layoutY="14.0" prefHeight="27.0" prefWidth="66.0" text="****" />
+            <Label layoutX="25.0" layoutY="41.0" text="Add New Customer">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCustomerType" layoutX="198.0" layoutY="80.0" prefHeight="27.0" prefWidth="149.0" promptText="Customer Type" />
+            <TextField fx:id="txtCustomerName" layoutX="387.0" layoutY="80.0" prefHeight="27.0" prefWidth="149.0" promptText="Customer Name" />
+            <TextField fx:id="txtAddress" layoutX="572.0" layoutY="80.0" prefHeight="27.0" prefWidth="214.0" promptText="Address" />
+            <TextField fx:id="txtCity" layoutX="25.0" layoutY="122.0" prefHeight="25.0" prefWidth="136.0" promptText="City" />
+            <TextField fx:id="txtProvince" layoutX="198.0" layoutY="122.0" promptText="Province" />
+            <TextField fx:id="txtContact" layoutX="387.0" layoutY="122.0" promptText="Contact" />
+            <Separator layoutX="14.0" layoutY="156.0" prefHeight="14.0" prefWidth="777.0" />
+            <AnchorPane fx:id="AnchCustable" layoutX="15.0" layoutY="332.0" prefHeight="263.0" prefWidth="802.0">
+               <children>
+                  <TableView fx:id="tblCustomer" layoutX="23.0" layoutY="15.0" prefHeight="220.0" prefWidth="767.0" visible="false">
+                    <columns>
+                      <TableColumn fx:id="colCusid" prefWidth="76.0" text="Customer id" />
+                      <TableColumn fx:id="colCusType" prefWidth="96.0" text="Customer Type" />
+                        <TableColumn fx:id="colCusName" prefWidth="97.0" text="Customer Name" />
+                        <TableColumn fx:id="colAddress" prefWidth="105.0" text="Address" />
+                        <TableColumn fx:id="colCity" prefWidth="83.0" text="City" />
+                        <TableColumn fx:id="colProvince" prefWidth="108.0" text="Province" />
+                        <TableColumn fx:id="colContact" prefWidth="100.0" text="Contact" />
+                        <TableColumn fx:id="colOperator" prefWidth="100.0" text="Operator" />
+                    </columns>
+                  </TableView>
+                  <TableView fx:id="tblBatch" layoutX="4.0" layoutY="15.0" prefHeight="220.0" prefWidth="786.0">
+                    <columns>
+                      <TableColumn fx:id="colPropertyID" prefWidth="75.0" text="PropertyID" />
+                        <TableColumn fx:id="colBatch" prefWidth="75.0" text="Batch" />
+                        <TableColumn fx:id="colPrice" prefWidth="75.0" text="Price" />
+                        <TableColumn fx:id="colDiscount" prefWidth="75.0" text="Discount" />
+                        <TableColumn fx:id="colDiscountState" prefWidth="88.0" text="Discount State" />
+                        <TableColumn fx:id="colActiveState" prefWidth="106.0" text="Active State" />
+                        <TableColumn fx:id="colQuantity" prefWidth="94.0" text="Quantity" />
+                        <TableColumn fx:id="colSystemDate" prefWidth="99.0" text="System Date" />
+                        <TableColumn fx:id="colProductID" prefWidth="113.0" text="Product ID" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Separator layoutX="14.0" layoutY="321.0" prefHeight="14.0" prefWidth="777.0" />
+            <TextField fx:id="txtSearch" layoutX="198.0" layoutY="39.0" prefHeight="25.0" prefWidth="588.0" promptText="txtSearch" />
+            <ComboBox fx:id="cmbProductID" layoutX="25.0" layoutY="285.0" onAction="#ProductOnAction" prefHeight="25.0" prefWidth="149.0" promptText="Product ID" />
+            <TextField fx:id="txtBatch" layoutX="238.0" layoutY="193.0" prefHeight="25.0" prefWidth="149.0" promptText="Batch" />
+            <TextField fx:id="txtPrice" layoutX="430.0" layoutY="193.0" promptText="Price" />
+            <TextField fx:id="txtDiscount" layoutX="642.0" layoutY="193.0" promptText="Discount" />
+            <TextField fx:id="txtDiscountState" layoutX="25.0" layoutY="236.0" prefHeight="25.0" prefWidth="149.0" promptText="DiscountState" />
+            <TextField fx:id="txtActiveState" layoutX="238.0" layoutY="236.0" prefHeight="25.0" prefWidth="149.0" promptText="ActiveState" />
+            <TextField fx:id="txtQuantity" layoutX="430.0" layoutY="236.0" promptText="Quantity" />
+            <TextField fx:id="txtSystemDate" layoutX="642.0" layoutY="236.0" promptText="SystemDate" />
+            <TextField fx:id="txtPropertyID" layoutX="25.0" layoutY="193.0" prefHeight="25.0" prefWidth="149.0" promptText="Property ID" />
+            <Button fx:id="btnAdd" layoutX="254.0" layoutY="283.0" mnemonicParsing="false" onAction="#AddOnAction" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: navy; -fx-background-radius: 10;" text="ADD" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnAddAll" layoutX="441.0" layoutY="283.0" mnemonicParsing="false" onAction="#AddAllOnAction" prefHeight="31.0" prefWidth="103.0" style="-fx-background-color: #fff200; -fx-background-radius: 10;" text="Add All">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnRemove" layoutX="654.0" layoutY="283.0" mnemonicParsing="false" onAction="#RemoveOnAction" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: #ab0f0f; -fx-background-radius: 10;" text="Remove" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="25.0" layoutY="170.0" prefHeight="17.0" prefWidth="115.0" text="Batch  Details">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnCustomerUpdate" layoutX="572.0" layoutY="122.0" mnemonicParsing="false" onAction="#CustomerUpdateOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #294324;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnCustomerRemove" layoutX="698.0" layoutY="122.0" mnemonicParsing="false" onAction="#CustomerRemoveOnAction" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #ab0f0f;" text="AddAll" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <TextField fx:id="txtCustomerID" layoutX="25.0" layoutY="81.0" onAction="#getDataOnAction" prefHeight="25.0" prefWidth="136.0" promptText="CustomerID" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnCustomer" layoutX="32.0" layoutY="209.0" mnemonicParsing="false" onAction="#CustomerFormOnAction" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #cabbe0; -fx-background-radius: 10;" text="New Customer">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf6161" />
+                  <Stop color="#252b46" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <Button fx:id="btnCustomertable" layoutX="32.0" layoutY="295.0" mnemonicParsing="false" onAction="#CustomertableOnAction" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #cabbe0; -fx-background-radius: 10;" text="Customer Table">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf6161" />
+                  <Stop color="#252b46" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <Button fx:id="btnBatch" layoutX="32.0" layoutY="378.0" mnemonicParsing="false" onAction="#BatchOnAction" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #cabbe0; -fx-background-radius: 10;" text="Batch Table">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf6161" />
+                  <Stop color="#252b46" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <Button fx:id="btnOrder" layoutX="32.0" layoutY="480.0" mnemonicParsing="false" onAction="#OrderOnAction" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #cabbe0; -fx-background-radius: 10;" text="Order">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#bf6161" />
+                  <Stop color="#252b46" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill></Button>
+      <AnchorPane fx:id="OrderAnchorpane" layoutX="239.0" layoutY="67.0" prefHeight="577.0" prefWidth="751.0" style="-fx-background-color: gray; -fx-background-radius: 10;" visible="false">
+         <children>
+            <Label layoutX="285.0" layoutY="30.0" prefHeight="41.0" prefWidth="250.0" text="Place Order">
+               <font>
+                  <Font name="Algerian" size="34.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.16190476190476194" startX="0.1333333333333333" startY="0.6571428571428571">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="#3dcc90" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill></Label>
+            <TextField fx:id="txtOrderID" layoutX="23.0" layoutY="105.0" prefHeight="25.0" prefWidth="136.0" promptText="OrderID" />
+            <TextField fx:id="txtOrderDate" layoutX="183.0" layoutY="105.0" prefHeight="25.0" prefWidth="176.0" promptText="OrderDate">
+
+            </TextField>
+            <TextField fx:id="txtOrderCustomerName" layoutX="554.0" layoutY="105.0" prefHeight="25.0" prefWidth="176.0" promptText="CustomerName" />
+            <ComboBox fx:id="cmbOrderCustomerID" layoutX="387.0" layoutY="105.0" onAction="#cmborderCustomerIDOnAction" prefWidth="150.0" promptText="CustomerID" />
+            <ComboBox fx:id="cmbOrderProductID" layoutX="23.0" layoutY="158.0" onAction="#cmbOrderProductIDOnAction" prefHeight="25.0" prefWidth="136.0" promptText="ProductID" />
+            <TextField fx:id="txtOrderDescription" layoutX="183.0" layoutY="158.0" prefHeight="25.0" prefWidth="176.0" promptText="Description" />
+            <TextField fx:id="txtOrderPrice" layoutX="563.0" layoutY="158.0" prefHeight="25.0" prefWidth="168.0" promptText="Price" />
+            <TextField fx:id="txtOrderQuanity" layoutX="27.0" layoutY="214.0" prefHeight="25.0" prefWidth="136.0" promptText="Quantity" />
+            <TextField fx:id="txtOrderQty" layoutX="183.0" layoutY="214.0" prefHeight="25.0" prefWidth="115.0" promptText="OrderQty" />
+            <Separator layoutX="25.0" layoutY="296.0" prefHeight="34.0" prefWidth="704.0" />
+            <TableView fx:id="tblOrder" layoutX="23.0" layoutY="345.0" prefHeight="200.0" prefWidth="540.0">
+              <columns>
+
+                <TableColumn fx:id="colOrderPropertyID" prefWidth="115.0" text="PropertyID" />
+                  <TableColumn fx:id="colOrderDescription" prefWidth="102.0" text="Description" />
+                  <TableColumn fx:id="colOrderQty" prefWidth="99.0" text="OrderQty" />
+                  <TableColumn fx:id="colOrderPrice" prefWidth="87.0" text="Price" />
+                  <TableColumn fx:id="colOrderAmount" prefWidth="136.0" text="Amount" />
+              </columns>
+            </TableView>
+            <Label layoutX="614.0" layoutY="386.0" prefHeight="25.0" prefWidth="66.0" text="Amount">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+            <Label fx:id="lblAmount" layoutX="622.0" layoutY="418.0" prefHeight="41.0" prefWidth="103.0" text="00.0">
+               <font>
+                  <Font name="System Bold" size="27.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnOrderADD" layoutX="418.0" layoutY="255.0" mnemonicParsing="false" onAction="#OrderAddOnAction" prefHeight="32.0" prefWidth="89.0" style="-fx-background-color: navy; -fx-background-radius: 10;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="Bauhaus 93" size="17.0" />
+               </font></Button>
+            <Button fx:id="btnOrderRemove" layoutX="572.0" layoutY="256.0" mnemonicParsing="false" onAction="#btnOrderRemoveOnAction" prefHeight="31.0" prefWidth="103.0" style="-fx-background-color: #a70d0d; -fx-background-radius: 10;" text="Remove" textFill="WHITE">
+               <font>
+                  <Font name="Bauhaus 93" size="16.0" />
+               </font></Button>
+            <Button fx:id="btnPlaceOrder" layoutX="599.0" layoutY="485.0" mnemonicParsing="false" onAction="#placeOrderOnAction" style="-fx-background-color: #1d391f; -fx-background-radius: 10;" text="PlaceOrder" textFill="WHITE">
+               <font>
+                  <Font name="Bauhaus 93" size="18.0" />
+               </font></Button>
+            <ComboBox fx:id="cmbOrderPropertyID" layoutX="387.0" layoutY="158.0" onAction="#cmbOrderPropertyIDOnAction" prefWidth="150.0" promptText="PropertyID" />
+            <Label layoutX="609.0" layoutY="345.0" text="Payment Info">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="0.05714285714285716" startX="0.1761904761904762" startY="0.6571428571428571">
+                     <stops>
+                        <Stop color="#612020" />
+                        <Stop color="BLACK" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="Bell MT Bold" size="20.0" />
+               </font>
+            </Label>
+            <Separator layoutX="599.0" layoutY="370.0" prefHeight="3.0" prefWidth="136.0" />
+         </children></AnchorPane>
+      <Label fx:id="lblTime" layoutX="877.0" layoutY="12.0" prefHeight="31.0" prefWidth="136.0" textFill="#00ffe9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDate" layoutX="66.0" layoutY="16.0" prefHeight="31.0" prefWidth="123.0" textFill="#00ffe9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="34.0" fitWidth="41.0" layoutX="15.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/calander.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="52.0" layoutX="821.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/clock.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="425.0" layoutY="8.0" text="Supermarket" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="34.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="77.0" fitWidth="89.0" layoutX="55.0" layoutY="79.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Supermarketlogo.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btngotoLogin" layoutX="68.0" layoutY="583.0" mnemonicParsing="false" onAction="#btnLoginFormOnAction" prefHeight="25.0" prefWidth="54.0" text="&lt;&lt;" />
+   </children>
+</AnchorPane>

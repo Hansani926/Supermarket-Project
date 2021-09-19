@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="611.0" prefWidth="745.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ModifyItemController">
+   <children>
+      <Label layoutX="-16.0" layoutY="-3.0" prefHeight="618.0" prefWidth="297.0" style="-fx-background-color: black; -fx-background-radius: 30;" />
+      <Button fx:id="btnModify" layoutX="29.0" layoutY="570.0" mnemonicParsing="false" onAction="#MainformOnAction" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: white;" text="&lt;&lt;" />
+      <DatePicker fx:id="datePick" layoutX="373.0" layoutY="108.0" />
+      <Button fx:id="btnSearch" layoutX="590.0" layoutY="108.0" mnemonicParsing="false" onAction="#SearchOnAction" text="Search" />
+      <Button fx:id="btnDailyIncome" layoutX="20.0" layoutY="192.0" mnemonicParsing="false" onAction="#DailyInComeOnAction" prefHeight="41.0" prefWidth="225.0" style="-fx-background-color: black; -fx-border-radius: 20; -fx-border-color: white;" text="Daily InCome" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnMonthncome1" layoutX="20.0" layoutY="320.0" mnemonicParsing="false" onAction="#MonthInComeOnAction" prefHeight="41.0" prefWidth="225.0" style="-fx-background-color: black; -fx-border-radius: 20; -fx-border-color: white;" text="Month InCome" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnAnnualIncome1" layoutX="20.0" layoutY="431.0" mnemonicParsing="false" onAction="#AnnualInComeOnAction" prefHeight="41.0" prefWidth="225.0" style="-fx-background-color: black; -fx-border-radius: 20; -fx-border-color: white;" text="AnnualnCome" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableDaliyInCome" layoutX="293.0" layoutY="178.0" prefHeight="200.0" prefWidth="442.0">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="75.0" text="Item Code" />
+          <TableColumn fx:id="colDescription" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="91.0" text="Qty On Hand" />
+            <TableColumn fx:id="colSellingQuntity" prefWidth="92.0" text="SellingQuntity" />
+            <TableColumn fx:id="colDailyInCome" prefWidth="108.0" text="DailyInCome" />
+        </columns>
+      </TableView>
+      <Label layoutX="560.0" layoutY="468.0" prefHeight="38.0" prefWidth="165.0" text="Total Income">
+         <font>
+            <Font name="System Bold Italic" size="26.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotalIncome" layoutX="573.0" layoutY="504.0" prefHeight="38.0" prefWidth="137.0" text="00.00">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="528.0" layoutY="508.0" prefHeight="30.0" prefWidth="39.0" text="LRK">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="396.0" layoutY="31.0" prefHeight="41.0" prefWidth="237.0" text="Daily Income">
+         <font>
+            <Font name="Forte" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="132.0" fitWidth="119.0" layoutX="328.0" layoutY="451.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Supermarketlogo.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="AnnualIncomeAnchorpane" layoutX="287.0" layoutY="4.0" prefHeight="605.0" prefWidth="454.0" style="-fx-background-color: Gray;" visible="false">
+         <children>
+            <Label layoutX="117.0" layoutY="52.0" text="Annual Income">
+               <font>
+                  <Font name="Forte" size="32.0" />
+               </font>
+            </Label>
+            <Label layoutX="6.0" layoutY="119.0" prefHeight="261.0" prefWidth="442.0" style="-fx-background-color: #326b43; -fx-background-radius: 20;" textFill="#326b43" />
+            <Label layoutX="35.0" layoutY="25.0" prefHeight="25.0" prefWidth="99.0" text="2021 Report">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="102.0" layoutY="131.0" prefHeight="27.0" prefWidth="64.0" text="4235" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="158.0" text="NEWCUSTOMER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="34.0" layoutY="189.0" prefHeight="7.0" prefWidth="174.0" />
+            <Separator layoutX="223.0" layoutY="131.0" orientation="VERTICAL" prefHeight="235.0" prefWidth="4.0" />
+            <Label layoutX="109.0" layoutY="205.0" text="+30%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="80.0" layoutY="232.0" text="SALES INCREASED" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Separator layoutX="35.0" layoutY="281.0" prefHeight="7.0" prefWidth="174.0" />
+            <Label layoutX="130.0" layoutY="305.0" prefHeight="17.0" prefWidth="39.0" text="253" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="69.0" layoutY="335.0" text="PROBLEMS REPORTED" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" layoutY="134.0" text="ANNUAL  INCOME" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="298.0" layoutY="190.0" prefHeight="21.0" prefWidth="24.0" text="RS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="268.0" layoutY="200.0" prefHeight="38.0" prefWidth="108.0" text="6,234,256.00" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="267.0" layoutY="292.0" text="2020 Income" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="271.0" layoutY="332.0" text="4,567,543.00" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <ScrollPane layoutX="11.0" layoutY="428.0" prefHeight="153.0" prefWidth="442.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="536.0" prefWidth="461.0">
+                     <children>
+                        <Label layoutX="8.0" layoutY="13.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="35.0" layoutY="14.0" text="January" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="33.0" layoutY="41.0" text="543,654.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="52.0" layoutY="77.0" prefHeight="17.0" prefWidth="24.0" text="75" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="81.0" layoutY="96.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="16.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="153.0" layoutY="13.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: darkgray;" />
+                        <Label layoutX="173.0" layoutY="14.0" text="February" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="172.0" layoutY="41.0" text="634,432.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="191.0" layoutY="77.0" prefHeight="17.0" prefWidth="24.0" text="80" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="229.0" layoutY="96.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="154.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="296.0" layoutY="14.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="328.0" layoutY="14.0" text="March" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="312.0" layoutY="41.0" text="765,345.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="338.0" layoutY="77.0" prefHeight="17.0" prefWidth="24.0" text="85" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="300.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="363.0" layoutY="96.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="64.0" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="8.0" layoutY="144.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="48.0" layoutY="142.0" text="April" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="169.0" text="678,543.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="81.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="52.0" layoutY="203.0" prefHeight="17.0" prefWidth="24.0" text="65" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="16.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="151.0" layoutY="140.0" prefHeight="119.0" prefWidth="137.0" style="-fx-background-color: darkgray;" />
+                        <Label layoutX="195.0" layoutY="142.0" text="May" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="174.0" layoutY="169.0" text="754,567.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="198.0" layoutY="203.0" prefHeight="17.0" prefWidth="24.0" text="83" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="231.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="155.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="296.0" layoutY="140.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="330.0" layoutY="142.0" text="June" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="312.0" layoutY="169.0" text="578,789.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="338.0" layoutY="203.0" prefHeight="17.0" prefWidth="24.0" text="60" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="300.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="368.0" layoutY="222.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="10.0" layoutY="270.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="47.0" layoutY="281.0" text="July" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="308.0" text="765,678.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="52.0" layoutY="333.0" prefHeight="17.0" prefWidth="24.0" text="74" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="16.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="84.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="151.0" layoutY="270.0" prefHeight="119.0" prefWidth="137.0" style="-fx-background-color: darkgray;" />
+                        <Label layoutX="182.0" layoutY="274.0" prefHeight="27.0" prefWidth="64.0" text="August" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="174.0" layoutY="296.0" text="456,678.00" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="204.0" layoutY="333.0" prefHeight="17.0" prefWidth="24.0" text="55" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="163.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="229.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="377.0" layoutY="363.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="296.0" layoutY="270.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Button layoutX="369.0" layoutY="356.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="311.0" layoutY="274.0" prefHeight="27.0" prefWidth="109.0" text="September" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="338.0" layoutY="296.0" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="309.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="353.0" layoutY="333.0" prefHeight="17.0" prefWidth="24.0" text="0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="400.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="40.0" layoutY="408.0" text="October" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="54.0" layoutY="435.0" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="16.0" layoutY="460.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="85.0" layoutY="483.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="151.0" layoutY="401.0" prefHeight="119.0" prefWidth="137.0" style="-fx-background-color: darkgray;" />
+                        <Label layoutX="176.0" layoutY="408.0" text="November" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="198.0" layoutY="435.0" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="163.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="231.0" layoutY="483.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="296.0" layoutY="400.0" prefHeight="119.0" prefWidth="132.0" style="-fx-background-color: gray;" />
+                        <Label layoutX="308.0" layoutY="408.0" prefHeight="27.0" prefWidth="109.0" text="December" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="332.0" layoutY="435.0" text="N/A" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="309.0" layoutY="464.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/addcustomer.png" />
+                           </image>
+                        </ImageView>
+                        <Button layoutX="369.0" layoutY="483.0" mnemonicParsing="false" style="-fx-background-color: white;" text="view" textFill="#111111">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="23.0" layoutY="136.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/customer.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="23.0" layoutY="218.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/max.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="38.0" fitWidth="47.0" layoutX="23.0" layoutY="296.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Attention.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="234.0" layoutY="256.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="MonthlyInComeAnchorpane" layoutX="288.0" layoutY="10.0" prefHeight="589.0" prefWidth="454.0" style="-fx-background-color: gray;">
+         <children>
+            <Label layoutX="109.0" layoutY="21.0" prefHeight="52.0" prefWidth="282.0" text="Monthly Income">
+               <font>
+                  <Font name="Forte" size="36.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="96.0" prefHeight="261.0" prefWidth="435.0" style="-fx-background-color: #231d56; -fx-background-radius: 20;" textFill="#231d56" />
+            <Label layoutX="112.0" layoutY="122.0" prefHeight="17.0" prefWidth="32.0" text="155" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="150.0" text="NEW CUSTOMERS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Separator layoutX="36.0" layoutY="171.0" prefHeight="16.0" prefWidth="183.0" />
+            <Separator layoutX="236.0" layoutY="106.0" orientation="VERTICAL" prefHeight="235.0" prefWidth="6.0" />
+            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="36.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/customer.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="36.0" layoutY="256.0" prefHeight="16.0" prefWidth="183.0" />
+            <Label layoutX="112.0" layoutY="187.0" prefHeight="27.0" prefWidth="50.0" text="+55%" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="81.0" layoutY="216.0" text="SALES INCREASED" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="36.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/max.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="118.0" layoutY="279.0" prefHeight="27.0" prefWidth="38.0" text="05" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="67.0" layoutY="314.0" text="PROBLEMS REPORTED" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="41.0" fitWidth="39.0" layoutX="28.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Attention.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="262.0" layoutY="117.0" prefHeight="31.0" prefWidth="165.0" text="Monthly Income" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </Label>
+            <Label layoutX="313.0" layoutY="147.0" prefHeight="17.0" prefWidth="32.0" text="RS" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="283.0" layoutY="182.0" prefHeight="27.0" prefWidth="109.0" text="754,566.00" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="289.0" layoutY="269.0" text="LAST MONTH" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="289.0" layoutY="307.0" prefHeight="27.0" prefWidth="99.0" text="234,456.00" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Separator layoutX="246.0" layoutY="229.0" prefHeight="16.0" prefWidth="183.0" />
+            <Label layoutX="5.0" layoutY="426.0" prefHeight="131.0" prefWidth="102.0" style="-fx-background-color: lightgray; -fx-border-color: white;" />
+            <Label layoutX="118.0" layoutY="426.0" prefHeight="131.0" prefWidth="102.0" style="-fx-background-color: lightgray; -fx-border-color: white;" />
+            <Label layoutX="232.0" layoutY="426.0" prefHeight="131.0" prefWidth="102.0" style="-fx-background-color: lightgray; -fx-border-color: white;" />
+            <Label layoutX="345.0" layoutY="426.0" prefHeight="131.0" prefWidth="102.0" style="-fx-background-color: lightgray; -fx-border-color: white;" />
+            <Label layoutX="20.0" layoutY="436.0" text="WEEK 01">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="134.0" layoutY="436.0" prefHeight="26.0" prefWidth="84.0" text="WEEK 02">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="247.0" layoutY="433.0" prefHeight="26.0" prefWidth="84.0" text="WEEK 03">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="354.0" layoutY="433.0" prefHeight="26.0" prefWidth="84.0" text="WEEK 04">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="10.0" layoutY="459.0" text="178,870.00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="123.0" layoutY="459.0" text="234,567.00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="237.0" layoutY="459.0" text="245,785.00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="350.0" layoutY="459.0" text="165,876.00">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="34.0" layoutY="486.0" text="No.of" textFill="#020507">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="11.0" layoutY="506.0" prefHeight="21.0" prefWidth="84.0" text="Reservation">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="143.0" layoutY="486.0" text="No.of" textFill="#020507">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="127.0" layoutY="506.0" prefHeight="21.0" prefWidth="84.0" text="Reservation">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="486.0" text="No.of" textFill="#020507">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="241.0" layoutY="506.0" prefHeight="21.0" prefWidth="84.0" text="Reservation">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="377.0" layoutY="486.0" text="No.of" textFill="#020507">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="354.0" layoutY="506.0" prefHeight="21.0" prefWidth="84.0" text="Reservation">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="527.0" text="34" textFill="#080d09">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="159.0" layoutY="524.0" text="23" textFill="#080d09">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="273.0" layoutY="524.0" text="45" textFill="#080d09">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="381.0" layoutY="524.0" text="53" textFill="#080d09">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="58.0" layoutY="21.0" prefHeight="61.0" prefWidth="149.0" text="Sweetbay" textFill="WHITE">
+         <font>
+            <Font name="Forte" size="38.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="72.0" text="SUPERMARKET" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
